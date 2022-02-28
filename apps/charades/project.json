@@ -1,0 +1,71 @@
+{
+  "root": "apps/charades",
+  "sourceRoot": "apps/charades/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/charades",
+        "index": "apps/charades/src/index.html",
+        "baseHref": "/",
+        "main": "apps/charades/src/main.tsx",
+        "polyfills": "apps/charades/src/polyfills.ts",
+        "tsConfig": "apps/charades/tsconfig.app.json",
+        "assets": ["apps/charades/src/favicon.ico", "apps/charades/src/assets"],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/charades/src/environments/environment.ts",
+              "with": "apps/charades/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "charades:build",
+        "hmr": true,
+        "proxyConfig": "apps/charades/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "charades:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/charades/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/charades"],
+      "options": {
+        "jestConfig": "apps/charades/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

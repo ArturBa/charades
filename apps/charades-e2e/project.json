@@ -1,0 +1,28 @@
+{
+  "root": "apps/charades-e2e",
+  "sourceRoot": "apps/charades-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/charades-e2e/cypress.json",
+        "devServerTarget": "charades:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "charades:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/charades-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["charades"]
+}
