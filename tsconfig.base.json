@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@charades/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@charades/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@charades/components": ["libs/components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
