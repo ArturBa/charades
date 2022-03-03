@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
+import { Header } from '@charades/web/component';
+
 /* eslint-disable-next-line */
 export interface JoinGameProps {}
 
-const StyledJoinGame = styled.div`
-  color: pink;
-`;
+const StyledJoinGame = styled.div``;
 
 export function JoinGame(props: JoinGameProps) {
   return (
     <StyledJoinGame>
-      <h1>Welcome to JoinGame!</h1>
+      <Header />
     </StyledJoinGame>
   );
 }
