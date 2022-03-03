@@ -1,3 +1,7 @@
 {
-  "conventionalCommits.scopes": ["components", "web client"]
+  "conventionalCommits.scopes": [
+    "components",
+    "web client",
+    "backend"
+  ]
 }
