@@ -10,9 +10,9 @@ export interface BackgroundProps {
 
 const StyledBackground = styled.div`
   ${(props: any) => css`
-    background-color: pink;
-    width: 100%;
-    height: 100%;
+    background-color: #f2f2f2;
+    min-width: 100%;
+    min-height: 100%;
     background-image: url(${props.background});
   `}
 `;
