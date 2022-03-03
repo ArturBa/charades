@@ -10,6 +10,10 @@ const StyledHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  button {
+    padding: 16px;
+  }
 `;
 
 export function Home(props: HomeProps) {
@@ -17,6 +21,7 @@ export function Home(props: HomeProps) {
     <StyledHome>
       <h1>Welcome to charades!</h1>
       <h2>Grab your friends and play together</h2>
+      <button>Join</button>
     </StyledHome>
   );
 }
