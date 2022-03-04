@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
 /* eslint-disable-next-line */
@@ -17,11 +18,17 @@ const StyledHome = styled.div`
 `;
 
 export function Home(props: HomeProps) {
+  const navigate = useNavigate();
+
+  const onHostGame = (): void => {
+    navigate('/room');
+  };
+
   return (
     <StyledHome>
       <h1>Welcome to charades!</h1>
       <h2>Grab your friends and play together</h2>
-      <button>Join</button>
+      <button onClick={onHostGame}>Host a game</button>
     </StyledHome>
   );
 }
