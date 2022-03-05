@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
 /* eslint-disable-next-line */
@@ -17,11 +19,26 @@ const StyledHome = styled.div`
 `;
 
 export function Home(props: HomeProps) {
+  const navigate = useNavigate();
+
+  const [disabled, setDisabled] = useState(false);
+
+  const joinRoom = () => {
+    setDisabled(true);
+
+    setTimeout(() => {
+      setDisabled(false);
+      navigate('/join-game');
+    }, 1000);
+  };
+
   return (
     <StyledHome>
       <h1>Welcome to charades!</h1>
       <h2>Grab your friends and play together</h2>
-      <button>Join</button>
+      <button disabled={disabled} onClick={joinRoom}>
+        Join
+      </button>
     </StyledHome>
   );
 }

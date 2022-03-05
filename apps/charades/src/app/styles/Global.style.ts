@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 16px;
+    color ${(props) => props.theme.colors.black};
   }
 
   body {
