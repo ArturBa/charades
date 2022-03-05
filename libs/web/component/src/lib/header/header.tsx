@@ -21,7 +21,7 @@ const StyledHeader = styled.div`
   gap: 24px;
   font-size: 2rem;
 
-  .timedown {
+  .countdown {
     font-size: 4rem;
     font-weight: bold;
   }
@@ -31,7 +31,7 @@ const StyledHeader = styled.div`
 `;
 
 export function Header(props: HeaderProps) {
-  const timeDownClasses = ['timedown', 'warning'].join(' ');
+  const countdownClasses = ['countdown', 'warning'].join(' ');
   const users = [
     {
       id: 124124,
@@ -50,7 +50,7 @@ export function Header(props: HeaderProps) {
       {users.map((user) => (
         <User key={user.id} user={user} />
       ))}
-      <div className={timeDownClasses}>1:40</div>
+      <div className={countdownClasses}>1:40</div>
     </StyledHeader>
   );
 }
