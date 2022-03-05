@@ -5,6 +5,29 @@
     "api-interfaces": "libs/api-interfaces",
     "charades": "apps/charades",
     "charades-e2e": "apps/charades-e2e",
-    "components": "libs/components"
+    "components": "libs/components",
+    "web-component": {
+      "root": "libs/web/component",
+      "sourceRoot": "libs/web/component/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/web/component/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/component"],
+          "options": {
+            "jestConfig": "libs/web/component/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
   }
 }
