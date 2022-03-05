@@ -5,9 +5,9 @@ import { ThemeProvider } from 'styled-components';
 import { BackgroundRoutingOutlet } from '@charades/components';
 
 import GlobalStyles from './styles/Global.style';
-import Home from './home/home';
-import JoinGame from './join-game/join-game';
 import { defaultTheme } from './styles/Theme.style';
+import Home from './home/home';
+import Room from './room/room';
 
 export const App = () => {
   return (
@@ -16,7 +16,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<BackgroundRoutingOutlet />}>
           <Route index element={<Home />} />
-          <Route path="join-game" element={<JoinGame />} />
+          <Route path="room" element={<Room />} />
         </Route>
       </Routes>
     </ThemeProvider>
