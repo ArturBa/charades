@@ -7,10 +7,15 @@ import App from './app/app';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import { ROOM_FEATURE_KEY, roomReducer } from './app/room/room.slice';
+import {
+  ROOM_HOST_FEATURE_KEY,
+  roomHostReducer,
+} from './app/room-host/room-host.slice';
 
 const store = configureStore({
-  reducer: { [ROOM_FEATURE_KEY]: roomReducer },
+  reducer: {
+    [ROOM_HOST_FEATURE_KEY]: roomHostReducer,
+  },
   // Additional middleware can be passed to this array
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
   devTools: process.env['NODE_ENV'] !== 'production',

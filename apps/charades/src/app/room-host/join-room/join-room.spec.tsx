@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Room from './room';
+import JoinRoom from './join-room';
 
-describe('Room', () => {
+describe('JoinRoom', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Room />);
+    const { baseElement } = render(<JoinRoom />);
     expect(baseElement).toBeTruthy();
   });
 });

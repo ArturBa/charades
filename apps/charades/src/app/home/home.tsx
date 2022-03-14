@@ -21,7 +21,7 @@ export function Home(props: HomeProps) {
   const navigate = useNavigate();
 
   const onHostGame = (): void => {
-    navigate('/room');
+    navigate('/host');
   };
 
   return (

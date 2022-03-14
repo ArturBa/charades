@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 /* eslint-disable-next-line */
 export interface UserProps {
-  userName?: boolean;
-  user: { userName: string; color: string };
+  displayName?: boolean;
+  user: { name: string; color: string };
 }
 
 const StyledUser = styled.div.attrs((props) => ({
@@ -36,9 +36,9 @@ export function User(props: UserProps) {
   return (
     <StyledUser color={props.user.color}>
       <div className="circle">
-        <span>{props.user.userName.toUpperCase()[0]}</span>
+        <span>{props.user.name.toUpperCase()[0]}</span>
       </div>
-      {props.userName ? <span>{props.user.userName}</span> : null}
+      {props.displayName ? <span>{props.user.name}</span> : null}
     </StyledUser>
   );
 }
