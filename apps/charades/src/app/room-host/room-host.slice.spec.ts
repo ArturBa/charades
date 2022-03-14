@@ -1,17 +1,21 @@
-import { fetchRoom, roomAdapter, roomReducer } from './room.slice';
+import {
+  fetchRoomHost,
+  roomHostAdapter,
+  roomHostReducer,
+} from './room-host.slice';
 
-describe('room reducer', () => {
+describe('roomHost reducer', () => {
   it('should handle initial state', () => {
-    const expected = roomAdapter.getInitialState({
+    const expected = roomHostAdapter.getInitialState({
       loadingStatus: 'not loaded',
       error: null,
     });
 
-    expect(roomReducer(undefined, { type: '' })).toEqual(expected);
+    expect(roomHostReducer(undefined, { type: '' })).toEqual(expected);
   });
 
-  it('should handle fetchRooms', () => {
-    let state = roomReducer(undefined, fetchRoom.pending(null, null));
+  it('should handle fetchRoomHosts', () => {
+    let state = roomHostReducer(undefined, fetchRoomHost.pending(null, null));
 
     expect(state).toEqual(
       expect.objectContaining({
@@ -21,7 +25,10 @@ describe('room reducer', () => {
       })
     );
 
-    state = roomReducer(state, fetchRoom.fulfilled([{ id: 1 }], null, null));
+    state = roomHostReducer(
+      state,
+      fetchRoomHost.fulfilled([{ id: 1 }], null, null)
+    );
 
     expect(state).toEqual(
       expect.objectContaining({
@@ -31,9 +38,9 @@ describe('room reducer', () => {
       })
     );
 
-    state = roomReducer(
+    state = roomHostReducer(
       state,
-      fetchRoom.rejected(new Error('Uh oh'), null, null)
+      fetchRoomHost.rejected(new Error('Uh oh'), null, null)
     );
 
     expect(state).toEqual(
