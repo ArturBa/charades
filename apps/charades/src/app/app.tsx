@@ -7,8 +7,16 @@ import GlobalStyles from './styles/Global.style';
 import { defaultTheme } from './styles/Theme.style';
 import Home from './home/home';
 import { Index as RoomHostIndex } from './room-host/index';
+import { initI18n } from './i18n.service';
+import { useEffect } from 'react';
 
 export const App = () => {
+  const defaultLanguage = 'en';
+
+  useEffect(() => {
+    initI18n('./assets/i18n/{{lng}}.json', defaultLanguage);
+  }, []);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles />
