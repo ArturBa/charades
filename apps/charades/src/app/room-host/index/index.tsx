@@ -32,7 +32,7 @@ export function Index(props: HostProps) {
           <Link to="/">home</Link>
         </li>
         <li>
-          <Link to="/room">room root</Link>
+          <Link to="/host">host room</Link>
         </li>
       </ul>
       <Routes>
