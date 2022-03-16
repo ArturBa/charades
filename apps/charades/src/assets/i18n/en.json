@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Welcome to charades",
+    "description": "Grab your friends and play together",
+    "host-game": "Host a game",
+    "join-game": "Join a game"
+  },
+  "room-host": {
+    "title": "Hosting a game",
+    "description": "You are hosting a game. Enter a room name and click start to begin.",
+    "room-name": "Room name",
+    "start": "Start",
+    "error": "Room name is required"
+  }
+}

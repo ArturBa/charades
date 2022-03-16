@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Link, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import styled from 'styled-components';
+import CreateRoom from '../create-room/create-room';
 import Header from '../header/header';
 import { roomHostActions } from '../room-host.slice';
 
@@ -11,6 +12,13 @@ export interface HostProps {}
 
 const StyledHost = styled.div`
   /* color: pink; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .content {
+    width: clamp(400px, 70vw, 1300px);
+  }
 `;
 
 export function Index(props: HostProps) {
@@ -25,19 +33,11 @@ export function Index(props: HostProps) {
   return (
     <StyledHost>
       <Header />
-      <h1>Welcome to Room!</h1>
-
-      <ul>
-        <li>
-          <Link to="/">home</Link>
-        </li>
-        <li>
-          <Link to="/host">host room</Link>
-        </li>
-      </ul>
-      <Routes>
-        <Route index element={<div>This is the room root route.</div>} />
-      </Routes>
+      <section className="content">
+        <Routes>
+          <Route index element={<CreateRoom />} />
+        </Routes>
+      </section>
     </StyledHost>
   );
 }
