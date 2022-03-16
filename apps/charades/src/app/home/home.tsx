@@ -29,9 +29,9 @@ export function Home(props: HomeProps) {
 
   return (
     <StyledHome>
-      <h1>{t('home')}</h1>
-      <h2>Grab your friends and play together</h2>
-      <button onClick={onHostGame}>Host a game</button>
+      <h1>{t('home.title')}</h1>
+      <h2>{t('home.description')}</h2>
+      <button onClick={onHostGame}>{t('home.host-game')}</button>
     </StyledHome>
   );
 }
