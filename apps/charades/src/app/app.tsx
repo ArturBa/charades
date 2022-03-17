@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 
-import { BackgroundRoutingOutlet } from '@charades/components';
+import { BackgroundRoutingOutlet } from '@charades/web/components';
 
 import GlobalStyles from './styles/Global.style';
 import { defaultTheme } from './styles/Theme.style';

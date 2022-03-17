@@ -5,10 +5,9 @@
     "api-interfaces": "libs/api-interfaces",
     "charades": "apps/charades",
     "charades-e2e": "apps/charades-e2e",
-    "components": "libs/components",
     "web-component": {
-      "root": "libs/web/component",
-      "sourceRoot": "libs/web/component/src",
+      "root": "libs/web/components",
+      "sourceRoot": "libs/web/components/src",
       "projectType": "library",
       "tags": [],
       "targets": {
@@ -16,14 +15,60 @@
           "executor": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["libs/web/component/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": ["libs/web/components/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/component"],
+          "outputs": ["coverage/libs/web/components"],
           "options": {
             "jestConfig": "libs/web/component/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-services": {
+      "root": "libs/web/services",
+      "sourceRoot": "libs/web/services/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/web/services/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/services"],
+          "options": {
+            "jestConfig": "libs/web/services/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-store": {
+      "root": "libs/web/store",
+      "sourceRoot": "libs/web/store/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/web/store/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/store"],
+          "options": {
+            "jestConfig": "libs/web/store/jest.config.js",
             "passWithNoTests": true
           }
         }
