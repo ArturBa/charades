@@ -1,6 +1,6 @@
 {
-  "root": "libs/components",
-  "sourceRoot": "libs/components/src",
+  "root": "libs/web/components",
+  "sourceRoot": "libs/web/components/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -8,14 +8,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/components/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/web/components/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/components"],
+      "outputs": ["coverage/libs/web/components"],
       "options": {
-        "jestConfig": "libs/components/jest.config.js",
+        "jestConfig": "libs/web/components/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -25,7 +25,7 @@
         "uiFramework": "@storybook/react",
         "port": 4400,
         "config": {
-          "configFolder": "libs/components/.storybook"
+          "configFolder": "libs/web/components/.storybook"
         }
       },
       "configurations": {
@@ -39,9 +39,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/components",
+        "outputPath": "dist/storybook/web/components",
         "config": {
-          "configFolder": "libs/components/.storybook"
+          "configFolder": "libs/web/components/.storybook"
         }
       },
       "configurations": {

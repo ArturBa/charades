@@ -1,9 +1,4 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-
-import { User } from '@charades/components';
-
-import { selectAllRoomHost } from '../room-host.slice';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -35,13 +30,9 @@ const StyledHeader = styled.div`
 
 export function Header(props: HeaderProps) {
   const countdownClasses = ['countdown', 'warning'].join(' ');
-  const users = useSelector(selectAllRoomHost);
 
   return (
     <StyledHeader>
-      {users.map((user) => (
-        <User key={user.id} user={user} />
-      ))}
       <div className={countdownClasses}>1:40</div>
     </StyledHeader>
   );

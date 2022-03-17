@@ -12,19 +12,16 @@ export const ROOM_HOST_FEATURE_KEY = 'roomHost';
 /*
  * Update these interfaces according to your requirements.
  */
-export interface UserHostEntity {
+export interface RoomHostEntity {
   id: number;
-  name: string;
-  color: string;
 }
 
-export interface RoomHostState extends EntityState<UserHostEntity> {
+export interface RoomHostState extends EntityState<RoomHostEntity> {
   loadingStatus: 'not loaded' | 'loading' | 'loaded' | 'error';
   error: string | null;
-  code: number | null;
 }
 
-export const roomHostAdapter = createEntityAdapter<UserHostEntity>();
+export const roomHostAdapter = createEntityAdapter<RoomHostEntity>();
 
 /**
  * Export an effect using createAsyncThunk from
@@ -59,7 +56,6 @@ export const initialRoomHostState: RoomHostState =
   roomHostAdapter.getInitialState({
     loadingStatus: 'not loaded',
     error: null,
-    code: null,
   });
 
 export const roomHostSlice = createSlice({
@@ -68,7 +64,6 @@ export const roomHostSlice = createSlice({
   reducers: {
     add: roomHostAdapter.addOne,
     remove: roomHostAdapter.removeOne,
-    addMany: roomHostAdapter.addMany,
     // ...
   },
   extraReducers: (builder) => {
@@ -78,7 +73,7 @@ export const roomHostSlice = createSlice({
       })
       .addCase(
         fetchRoomHost.fulfilled,
-        (state: RoomHostState, action: PayloadAction<UserHostEntity[]>) => {
+        (state: RoomHostState, action: PayloadAction<RoomHostEntity[]>) => {
           roomHostAdapter.setAll(state, action.payload);
           state.loadingStatus = 'loaded';
         }

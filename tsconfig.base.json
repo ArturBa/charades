@@ -16,8 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@charades/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@charades/components": ["libs/components/src/index.ts"],
-      "@charades/web/component": ["libs/web/component/src/index.ts"]
+      "@charades/web/component": ["libs/web/component/src/index.ts"],
+      "@charades/web/components": ["libs/web/components/src/index.ts"],
+      "@charades/web/services": ["libs/web/services/src/index.ts"],
+      "@charades/web/store": ["libs/web/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
