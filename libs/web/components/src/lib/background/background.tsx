@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
 import background from './Background.png';
@@ -11,8 +11,8 @@ export interface BackgroundProps {
 const StyledBackground = styled.div`
   ${(props: any) => css`
     background-color: #f2f2f2;
-    min-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     background-image: url(${props.background});
   `}
 `;

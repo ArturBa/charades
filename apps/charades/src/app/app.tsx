@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import { ThemeProvider } from 'styled-components';
 
-import { BackgroundRoutingOutlet } from '@charades/web/components';
+import { Background } from '@charades/web/components';
 
 import GlobalStyles from './styles/Global.style';
 import { defaultTheme } from './styles/Theme.style';
@@ -20,12 +20,12 @@ export const App = () => {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles />
       <Suspense fallback={<div>Loading languages...</div>}>
-        <Routes>
-          <Route path="/" element={<BackgroundRoutingOutlet />}>
-            <Route index element={<Home />} />
+        <Background>
+          <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="host" element={<RoomHostIndex />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </Background>
       </Suspense>
     </ThemeProvider>
   );

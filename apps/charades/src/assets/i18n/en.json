@@ -6,10 +6,9 @@
     "join-game": "Join a game"
   },
   "room-host": {
-    "title": "Hosting a game",
-    "description": "You are hosting a game. Enter a room name and click start to begin.",
-    "room-name": "Room name",
-    "start": "Start",
-    "error": "Room name is required"
+    "create-room": {
+      "title": "Create a new game room",
+      "create": "Create"
+    }
   }
 }

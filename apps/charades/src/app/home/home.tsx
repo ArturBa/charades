@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
+import { Button } from '@charades/web/components';
+
 /* eslint-disable-next-line */
 export interface HomeProps {}
 
@@ -12,10 +14,6 @@ const StyledHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  button {
-    padding: 16px;
-  }
 `;
 
 export function Home(props: HomeProps) {
@@ -24,14 +22,14 @@ export function Home(props: HomeProps) {
   const { t } = useTranslation();
 
   const onHostGame = (): void => {
-    navigate('/host');
+    navigate('/host/create');
   };
 
   return (
     <StyledHome>
       <h1>{t('home.title')}</h1>
       <h2>{t('home.description')}</h2>
-      <button onClick={onHostGame}>{t('home.host-game')}</button>
+      <Button onClick={onHostGame}>{t('home.host-game')}</Button>
     </StyledHome>
   );
 }
